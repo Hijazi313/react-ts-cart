@@ -43,6 +43,7 @@ const App = () => {
   };
   const handleRemoveFromCart = (id: number) =>{
     setCartItems(prev => prev.reduce((acc, item)=> {
+//       check if the current item has only one instance present in cart then remove it
         if(item.id===id){
           if(item.amount ===1) return acc;
           return [...acc, {...item, amount: item.amount-1}]
